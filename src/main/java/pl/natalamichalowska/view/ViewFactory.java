@@ -23,7 +23,8 @@ public class ViewFactory {
     }
 
     //View options:
-    private ColorTheme colorTheme = ColorTheme.DARK;
+    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private FontSize fontSize = FontSize.MEDIUM;
 
     public ColorTheme getColorTheme() {
         return colorTheme;
@@ -41,7 +42,6 @@ public class ViewFactory {
         this.fontSize = fontSize;
     }
 
-    private FontSize fontSize = FontSize.MEDIUM;
     public void showLoginWindow() {
         System.out.println("Login window called");
         BaseController controller = new LoginWindowController(emailManager, this, "/LoginWindow.fxml");

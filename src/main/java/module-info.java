@@ -3,6 +3,8 @@ module pl.natalamichalowska {
     requires javafx.fxml;
     requires javafx.web;
     requires javafx.graphics;
+    requires activation;
+    requires java.mail;
 
 
     opens pl.natalamichalowska to javafx.fxml, javafx.controls;
