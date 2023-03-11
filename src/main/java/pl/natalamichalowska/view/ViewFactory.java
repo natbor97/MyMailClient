@@ -11,16 +11,19 @@ import pl.natalamichalowska.controller.MainWindowController;
 import pl.natalamichalowska.controller.OptionsWindowController;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ViewFactory {
     private EmailManager emailManager;
+    private ArrayList<Stage> activeStages;
 
     public ViewFactory(EmailManager emailManager) {
         this.emailManager = emailManager;
+        activeStages = new ArrayList<Stage>();
     }
 
     //View options:
-    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private ColorTheme colorTheme = ColorTheme.DARK;
 
     public ColorTheme getColorTheme() {
         return colorTheme;
@@ -71,9 +74,21 @@ public class ViewFactory {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        activeStages.add(stage);
     }
 
     public void closeStage(Stage stageToClose) {
         stageToClose.close();
+        activeStages.remove(stageToClose);
+    }
+
+    public void updateStyles() {
+        for (Stage stage: activeStages){
+            Scene scene = stage.getScene();
+            scene.getStylesheets().clear();
+
+            scene.getStylesheets().add(getClass().getResource(ColorTheme.getCssPath(colorTheme)).toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(FontSize.getCssPath(fontSize)).toExternalForm());
+        }
     }
 }

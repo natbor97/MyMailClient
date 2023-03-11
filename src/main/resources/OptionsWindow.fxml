@@ -13,7 +13,7 @@
       <ChoiceBox fx:id="themePicker" layoutX="154.0" layoutY="150.0" prefHeight="25.0" prefWidth="223.0" />
       <Label layoutX="52.0" layoutY="102.0" prefHeight="17.0" prefWidth="89.0" text="Font Size:" />
       <Label layoutX="52.0" layoutY="154.0" prefHeight="17.0" prefWidth="89.0" text="Color theme:" />
-      <Label layoutX="189.0" layoutY="27.0" prefHeight="44.0" prefWidth="152.0" text="Options">
+      <Label layoutX="189.0" layoutY="27.0" prefHeight="44.0" prefWidth="152.0" styleClass="big" text="Options">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
