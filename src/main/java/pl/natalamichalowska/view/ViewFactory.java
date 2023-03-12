@@ -5,10 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import pl.natalamichalowska.EmailManager;
-import pl.natalamichalowska.controller.BaseController;
-import pl.natalamichalowska.controller.LoginWindowController;
-import pl.natalamichalowska.controller.MainWindowController;
-import pl.natalamichalowska.controller.OptionsWindowController;
+import pl.natalamichalowska.controller.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,6 +54,12 @@ public class ViewFactory {
     public void showOptionsWindow() {
         System.out.println("Options window called");
         BaseController controller = new OptionsWindowController(emailManager, this, "/OptionsWindow.fxml");
+        initializeStage(controller);
+    }
+
+    public void showComposeMessageWindow() {
+        System.out.println("Compose message window called");
+        BaseController controller = new ComposeMessageController(emailManager, this, "/ComposeMessageWindow.fxml");
         initializeStage(controller);
     }
     private void initializeStage(BaseController baseController){

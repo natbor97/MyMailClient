@@ -11,6 +11,9 @@ public class EmailAccount {
     private Store store;
     private Session session;
 
+    public Session getSession() {
+        return session;
+    }
     public void setSession(Session session) {
         this.session = session;
     }
@@ -58,6 +61,7 @@ public class EmailAccount {
     public String toString() {
         return address;
     }
+
 
 
 }

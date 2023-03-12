@@ -58,7 +58,7 @@ public class EmailManager {
     }
 
     public void addEmailAccount(EmailAccount emailAccount){
-        //emailAccounts.add(emailAccount);
+        emailAccounts.add(emailAccount);
         EmailTreeItem<String> treeItem = new EmailTreeItem<String>(emailAccount.getAddress());
         //treeItem.setGraphic(iconResolver.getIconForFolder(emailAccount.getAddress()));
         FetchFoldersService fetchFoldersService = new FetchFoldersService(emailAccount.getStore(), treeItem, folderList);
