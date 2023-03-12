@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
@@ -35,11 +35,11 @@
         <TreeView fx:id="emailsTreeView" layoutY="25.0" prefHeight="375.0" prefWidth="151.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="25.0" />
         <TableView fx:id="emailsTableView" layoutX="150.0" layoutY="25.0" prefHeight="200.0" prefWidth="450.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
             <columns>
-                <TableColumn prefWidth="95.33334350585938" text="Sender" />
-                <TableColumn prefWidth="84.0" text="Subject" />
-                <TableColumn prefWidth="72.6666259765625" text="Recipient" />
-                <TableColumn prefWidth="90.00006103515625" text="Size" />
-                <TableColumn prefWidth="106.0" text="Date" />
+                <TableColumn fx:id="senderCol" prefWidth="95.33334350585938" text="Sender" />
+                <TableColumn fx:id="subjectCol" prefWidth="84.0" text="Subject" />
+                <TableColumn fx:id="recipientCol" prefWidth="72.6666259765625" text="Recipient" />
+                <TableColumn fx:id="sizeCol" prefWidth="90.00006103515625" text="Size" />
+                <TableColumn fx:id="dateCol" prefWidth="106.0" text="Date" />
             </columns>
         </TableView>
         <WebView fx:id="emailWebView" layoutX="150.0" layoutY="225.0" prefHeight="175.0" prefWidth="450.0" AnchorPane.bottomAnchor="5.086263058728946E-6" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="224.6666615804036" />

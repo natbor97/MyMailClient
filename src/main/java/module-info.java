@@ -11,4 +11,5 @@ module pl.natalamichalowska {
     exports pl.natalamichalowska;
     exports pl.natalamichalowska.controller;
     opens pl.natalamichalowska.controller to javafx.fxml, javafx.controls;
+    opens pl.natalamichalowska.model;
 }

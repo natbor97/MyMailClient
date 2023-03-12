@@ -7,15 +7,18 @@ import pl.natalamichalowska.model.EmailTreeItem;
 import javax.mail.Folder;
 import javax.mail.MessagingException;
 import javax.mail.Store;
+import java.util.List;
 
 public class FetchFoldersService extends Service<Void> {
 
     private Store store;
     private EmailTreeItem<String> foldersRoot;
+    private List<Folder> folderList;
 
-    public FetchFoldersService(Store store, EmailTreeItem<String> foldersRoot){
+    public FetchFoldersService(Store store, EmailTreeItem<String> foldersRoot, List<Folder> folderList){
         this.store = store;
         this.foldersRoot = foldersRoot;
+        this.folderList = folderList;
     }
 
     @Override
@@ -37,14 +40,14 @@ public class FetchFoldersService extends Service<Void> {
             EmailTreeItem<String> emailTreeItem = new EmailTreeItem<String>(folder.getName());
             foldersRoot.getChildren().add(emailTreeItem);
             foldersRoot.setExpanded(true);
-            fetchMessageOnFolder(folder, emailTreeItem);
+            fetchMessagesOnFolder(folder, emailTreeItem);
             if(folder.getType() == Folder.HOLDS_FOLDERS){
                 Folder[] subFolders = folder.list();
                 handleFolders(subFolders,emailTreeItem);
             }
         }
     }
-    private void fetchMessageOnFolder(Folder folder, EmailTreeItem<String> emailTreeItem) {
+    private void fetchMessagesOnFolder(Folder folder, EmailTreeItem<String> emailTreeItem) {
         Service fetchMessagesService = new Service() {
             @Override
             protected Task createTask() {
@@ -55,7 +58,7 @@ public class FetchFoldersService extends Service<Void> {
                             folder.open(Folder.READ_WRITE);
                             int folderSize = folder.getMessageCount();
                             for (int i = folderSize; i>0 ; i--){
-                                System.out.println(folder.getMessage(i).getSubject());
+                                emailTreeItem.addEmail(folder.getMessage(i));
                             }
                         }
                         return null;

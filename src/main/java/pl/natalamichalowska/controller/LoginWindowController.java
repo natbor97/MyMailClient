@@ -50,9 +50,9 @@ public class LoginWindowController extends BaseController implements Initializab
                         errorLabel.setText("Invalid credentials");
                         return;
                     case FAILED_BY_NETWORK:
-                        errorLabel.setText("Conection error");
+                        errorLabel.setText("Connection error");
                         return;
-                    case FAILED_BY_UNEXPEECTED_ERROR:
+                    case FAILED_BY_UNEXPECTED_ERROR:
                         errorLabel.setText("something gone wrong");
                         return;
                     default: return;
@@ -76,6 +76,6 @@ public class LoginWindowController extends BaseController implements Initializab
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         emailAddress.setText("natalia.michalowska97@op.pl");
-        passwordField.setText("haslo");
+        passwordField.setText("Zamojska16");
     }
 }

@@ -6,7 +6,7 @@ import pl.natalamichalowska.view.ViewFactory;
 public abstract class BaseController {
     protected EmailManager emailManager;
     protected ViewFactory viewFactory;
-    String fxmlName;
+    private String fxmlName;
 
     public BaseController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         this.emailManager = emailManager;
