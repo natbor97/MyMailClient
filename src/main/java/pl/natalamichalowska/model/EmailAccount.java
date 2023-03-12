@@ -1,6 +1,7 @@
 package pl.natalamichalowska.model;
 
 import javax.mail.Store;
+import javax.mail.Session;
 import java.util.Properties;
 
 public class EmailAccount {
@@ -8,6 +9,11 @@ public class EmailAccount {
     private String password;
     private Properties properties;
     private Store store;
+    private Session session;
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
 
     public EmailAccount(String address, String password) {
         this.address = address;
@@ -46,6 +52,11 @@ public class EmailAccount {
 
     public void setStore(Store store) {
         this.store = store;
+    }
+
+    @Override
+    public String toString() {
+        return address;
     }
 
 
