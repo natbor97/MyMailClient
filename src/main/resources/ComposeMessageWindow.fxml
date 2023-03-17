@@ -18,5 +18,6 @@
       <Label fx:id="errorLabel" layoutX="35.0" layoutY="453.0" prefHeight="17.0" prefWidth="329.0" />
       <Label layoutX="29.0" layoutY="14.0" text="Account:" />
       <ChoiceBox fx:id="emailAccountChoice" layoutX="106.0" layoutY="10.0" prefHeight="25.0" prefWidth="364.0" />
+      <Button layoutX="14.0" layoutY="135.0" mnemonicParsing="false" onAction="#attachBtnAction" text="Attach:" />
    </children>
 </AnchorPane>
