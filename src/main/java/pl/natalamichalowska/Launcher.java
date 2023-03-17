@@ -2,11 +2,11 @@ package pl.natalamichalowska;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import pl.nataliamichalowska.controller.persistance.PersistenceAccess;
-import pl.nataliamichalowska.controller.persistance.ValidAccount;
-import pl.nataliamichalowska.controller.services.LoginService;
-import pl.nataliamichalowska.model.EmailAccount;
-import pl.nataliamichalowska.view.ViewFactory;
+import pl.natalamichalowska.controller.persistance.PersistenceAccess;
+import pl.natalamichalowska.controller.persistance.ValidAccount;
+import pl.natalamichalowska.controller.services.LoginService;
+import pl.natalamichalowska.model.EmailAccount;
+import pl.natalamichalowska.view.ViewFactory;
 
 import java.util.ArrayList;
 import java.util.List;
