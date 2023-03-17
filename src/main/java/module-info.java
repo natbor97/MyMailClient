@@ -5,6 +5,7 @@ module pl.natalamichalowska {
     requires javafx.graphics;
     requires activation;
     requires java.mail;
+    requires java.desktop;
 
 
     opens pl.natalamichalowska to javafx.fxml, javafx.controls;
