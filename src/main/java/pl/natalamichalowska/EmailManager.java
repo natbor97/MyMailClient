@@ -1,14 +1,14 @@
-package pl.nataliamichalowska;
+package pl.natalamichalowska;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TreeItem;
-import pl.nataliamichalowska.controller.services.FetchFoldersService;
-import pl.nataliamichalowska.controller.services.FolderUpdaterService;
-import pl.nataliamichalowska.model.EmailAccount;
-import pl.nataliamichalowska.model.EmailMessage;
-import pl.nataliamichalowska.model.EmailTreeItem;
-import pl.nataliamichalowska.view.IconResolver;
+import pl.natalamichalowska.controller.services.FetchFoldersService;
+import pl.natalamichalowska.controller.services.FolderUpdaterService;
+import pl.natalamichalowska.model.EmailAccount;
+import pl.natalamichalowska.model.EmailMessage;
+import pl.natalamichalowska.model.EmailTreeItem;
+import pl.natalamichalowska.view.IconResolver;
 
 import javax.mail.Flags;
 import javax.mail.Folder;
