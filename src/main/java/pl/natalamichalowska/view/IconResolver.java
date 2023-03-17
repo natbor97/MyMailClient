@@ -1,4 +1,4 @@
-package pl.nataliamichalowska.view;
+package pl.natalamichalowska.view;
 
 import javafx.scene.Node;
 import javafx.scene.image.Image;
