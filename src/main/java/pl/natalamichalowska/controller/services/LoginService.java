@@ -10,6 +10,7 @@ import pl.natalamichalowska.controller.EmailLoginResult;
 import javax.mail.*;
 
 public class LoginService extends Service<EmailLoginResult> {
+
     EmailAccount emailAccount;
     EmailManager emailManager;
 
@@ -18,7 +19,7 @@ public class LoginService extends Service<EmailLoginResult> {
         this.emailManager = emailManager;
     }
 
-    public EmailLoginResult login() {
+    private EmailLoginResult login(){
         Authenticator authenticator = new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -35,19 +36,18 @@ public class LoginService extends Service<EmailLoginResult> {
                     emailAccount.getPassword());
             emailAccount.setStore(store);
             emailManager.addEmailAccount(emailAccount);
-
         } catch (NoSuchProviderException e) {
             e.printStackTrace();
             return EmailLoginResult.FAILED_BY_NETWORK;
         } catch (AuthenticationFailedException e) {
             e.printStackTrace();
-            return EmailLoginResult.FAILED_BY_CREDENTIALS;
+            return  EmailLoginResult.FAILED_BY_CREDENTIALS;
         } catch (MessagingException e) {
             e.printStackTrace();
             return EmailLoginResult.FAILED_BY_UNEXPECTED_ERROR;
         } catch (Exception e) {
             e.printStackTrace();
-            return EmailLoginResult.FAILED_BY_UNEXPECTED_ERROR;
+            return  EmailLoginResult.FAILED_BY_UNEXPECTED_ERROR;
         }
         return EmailLoginResult.SUCCESS;
     }
