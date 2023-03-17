@@ -1,4 +1,4 @@
-package pl.nataliamichalowska.controller;
+package pl.natalamichalowska.controller;
 
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
