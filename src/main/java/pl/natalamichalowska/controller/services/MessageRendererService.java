@@ -73,7 +73,7 @@ public class MessageRendererService extends Service {
             } else if(!isTextPlain(contentType)){
                 //here we get the attachments:
                 MimeBodyPart mbp = (MimeBodyPart) bodyPart;
-               // emailMessage.addAttachment(mbp);
+                emailMessage.addAttachment(mbp);
             }
         }
     }
@@ -84,7 +84,7 @@ public class MessageRendererService extends Service {
 
     private boolean isSimpleType(String contentType){
         if(contentType.contains("TEXT/HTML") ||
-                //contentType.contains("mixed")||
+                contentType.contains("mixed")||
                 contentType.contains("text")){
             return true;
         } else {
